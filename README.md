@@ -12,15 +12,15 @@ This setup collects both system-level and container-level metrics, and visualize
 flowchart LR
     subgraph Host["🖥️ Host System"]
         direction TB
-        NE["🧩 Node Exporter\n(System Metrics)"]
-        CA["📦 cAdvisor\n(Container Metrics)"]
-        APP["🚀 Application\n(/metrics endpoint)"]
+        NE["🧩 Node Exporter <br> (System Metrics)"]
+        CA["📦 cAdvisor <br> (Container Metrics)"]
+        APP["🚀 Application <br> (Metrics endpoint)"]
     end
 
     subgraph PrometheusStack["📈 Monitoring Stack (Docker Compose)"]
         direction TB
-        PR["📊 Prometheus\n(Metrics Storage & Scraper)"]
-        GR["📉 Grafana\n(Dashboards & Visualization)"]
+        PR["📊 Prometheus <br> (Metrics Storage & Scraper)"]
+        GR["📉 Grafana <br> (Dashboards & Visualization)"]
     end
 
     NE -->|CPU, Memory, Disk| PR
