@@ -32,3 +32,11 @@ flowchart LR
     style PrometheusStack fill:#fff3e0,stroke:#ef6c00,stroke-width:1px
     style GR fill:#f3e5f5,stroke:#6a1b9a,stroke-width:1px
 ```
+
+## 🧰 Getting Started     
+
+### Start all monitoring services
+```docker compose up -d```
+
+### Stop and remove all containers
+```docker compose down```
