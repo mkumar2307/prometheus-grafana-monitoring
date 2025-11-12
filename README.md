@@ -33,10 +33,45 @@ flowchart LR
     style GR fill:#f3e5f5,stroke:#6a1b9a,stroke-width:1px
 ```
 
-## 🧰 Getting Started     
+# 🧰 Getting Started     
 
-### Start all monitoring services
-```docker compose up -d```
+## 🐍 Run the Python App Locally       
 
-### Stop and remove all containers
-```docker compose down```
+Create and activate a virtual environment      
+
+```python3 -m venv venv```
+```source venv/bin/activate   # On Windows: venv\Scripts\activate ```      
+
+Install dependencies        
+
+```pip install -r requirements.txt```         
+
+Run the application      
+
+```python app.py```
+
+## 🐳 Run Everything in Docker         
+
+Ensure Docker and Docker Compose are installed.
+
+### Build and start containers      
+
+From project root where docker-compose.yml lives (and ./monitoring-demo-app contains app.py etc.)       
+
+```docker compose up --build -d```
+
+### Stop and remove all containers         
+
+```docker compose down```          
+
+## Verify Monitoring setup        
+
+Once all services are running:           
+
+| Service       | URL                                                            | Description       |
+| ------------- | -------------------------------------------------------------- | ----------------- |
+| Prometheus    | [http://localhost:9090](http://localhost:9090)                 | Metrics database  |
+| Grafana       | [http://localhost:3000](http://localhost:3000)                 | Dashboards        |
+| Node Exporter | [http://localhost:9100/metrics](http://localhost:9100/metrics) | System metrics    |
+| cAdvisor      | [http://localhost:8080](http://localhost:8080)                 | Container metrics |
+
