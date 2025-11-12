@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+build/
+dist/
+*.egg-info/
+.eggs/
+venv/
+env/
+ENV/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Docker / runtime
+*.log
+docker-compose.override.yml
+logs/
+
+# Environment / secrets
+.env
+.env.*
+secrets.json
+
+# Test cache
+.pytest_cache/
