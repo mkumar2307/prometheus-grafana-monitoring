@@ -1,0 +1,39 @@
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+env/
+ENV/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Git
+.git/
+.gitignore
+
+# Docker / Compose overrides
+docker-compose.override.yml
+
+# Logs
+*.log
+logs/
+
+# Editor / OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Environment / secrets
+.env
+.env.*
+secrets.json
+
+# Test cache
+.pytest_cache/
