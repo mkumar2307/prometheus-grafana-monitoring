@@ -39,7 +39,7 @@ flowchart LR
 
 Create and activate a virtual environment      
 
-```python3 -m venv venv```
+```python3 -m venv venv```         
 ```source venv/bin/activate   # On Windows: venv\Scripts\activate ```      
 
 Install dependencies        
