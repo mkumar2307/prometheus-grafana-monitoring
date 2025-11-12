@@ -40,3 +40,16 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
     restart: unless-stopped
+
+  monitoring-demo-app:
+    build:
+      context: ./monitoring-demo-app
+      dockerfile: Dockerfile
+    container_name: monitoring-demo-app
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    networks:
+      - monitoring-network
