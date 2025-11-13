@@ -41,7 +41,7 @@ services:
 
   monitoring-demo-app:
     build:
-      context: ./monitoring-demo-app
+      context: .
       dockerfile: Dockerfile
     container_name: monitoring-demo-app
     restart: unless-stopped
