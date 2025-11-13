@@ -9,6 +9,9 @@ services:
     depends_on:
       - cadvisor
       - node-exporter
+      - monitoring-demo-app
+    networks:
+      - monitoring-network
 
   node-exporter:
     image: prom/node-exporter
@@ -16,6 +19,8 @@ services:
     ports:
       - "9100:9100"
     restart: unless-stopped
+    networks:
+      - monitoring-network
 
   cadvisor:
     image: gcr.io/cadvisor/cadvisor:latest
@@ -28,6 +33,8 @@ services:
       - /sys:/sys:ro
       - /var/lib/docker/:/var/lib/docker:ro
     restart: unless-stopped
+    networks:
+      - monitoring-network
 
   grafana:
     image: grafana/grafana
@@ -38,11 +45,14 @@ services:
       - GF_SECURITY_ADMIN_USER=admin
       - GF_SECURITY_ADMIN_PASSWORD=admin
     restart: unless-stopped
+    networks:
+      - monitoring-network
 
   monitoring-demo-app:
     build:
       context: .
       dockerfile: Dockerfile
+    image: monitoring-demo-app
     container_name: monitoring-demo-app
     restart: unless-stopped
     ports:
